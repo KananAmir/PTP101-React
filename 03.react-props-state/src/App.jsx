@@ -4,14 +4,14 @@ import Card from './components/Card'
 import ChildA from './components/ChildA'
 import Input from './components/Input'
 import Layout from './components/Layout'
-
+import { FaRegUser } from "react-icons/fa";
 function App() {
 
   const title = "My React App"
   return (
     <>
       <Layout>
-        <h2>Hello</h2>
+        <h2>Hello, <FaRegUser style={{color: 'blue'}}/></h2>
 
         <hr />
         <ChildA title={title} />
