@@ -45,3 +45,33 @@
 .error-message{
   color: red;
 }
+
+/* ===== Delete Selected Todos ===== */
+.delete-selected-btn {
+  margin-top: 12px;
+  height: 42px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 10px;
+  background: #dc2626; /* red */
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.05s ease, box-shadow 0.15s ease;
+}
+
+.delete-selected-btn:hover {
+  opacity: 0.92;
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.35);
+}
+
+.delete-selected-btn:active {
+  transform: translateY(1px);
+}
+
+.delete-selected-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}

@@ -24,7 +24,7 @@ const ClearAll = ({ setTodos, todos}) => {
             });
     }
   return (
-    <button disabled={todos.length === 0 ? true : false} onClick={handleClearAll}>ClearAll</button>
+    <button className="clear-all-btn" disabled={todos.length === 0 ? true : false} onClick={handleClearAll}>ClearAll</button>
   )
 }
 

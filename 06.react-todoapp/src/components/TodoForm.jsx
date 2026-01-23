@@ -43,8 +43,9 @@ const TodoForm = ({ todos, setTodos }) => {
     });
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="todoForm">
       <input
+        className="todo-input"
         type="text"
         placeholder="enter ur todo here.."
         onChange={(e) => setTodoText(e.target.value)}

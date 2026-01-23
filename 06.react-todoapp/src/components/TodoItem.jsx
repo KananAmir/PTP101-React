@@ -18,8 +18,8 @@ const TodoItem = ({ todo, handleDelete, setSelectedIds }) => {
         }
         
       }}/>
-      <span>{todo.text}</span>
-      <button onClick={() => handleDelete(todo.id)}><FaRegTrashAlt /></button>
+      <span className="todo-text">{todo.text}</span>
+      <button className="delete-btn" onClick={() => handleDelete(todo.id)}><FaRegTrashAlt /></button>
     </div>
   )
 }

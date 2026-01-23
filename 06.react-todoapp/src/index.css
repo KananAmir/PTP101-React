@@ -1,68 +1,198 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.4;
+  background: #f6f7fb;
+  color: #111827;
+}
+
+
+.todo-app{
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* ===== Form ===== */
+#todoForm {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.todo-input {
+  flex: 1;
+  min-width: 220px;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.todo-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+#todoForm button[type="submit"] {
+  height: 44px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: transform 0.05s ease, opacity 0.15s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+#todoForm button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+#todoForm button[type="submit"]:hover {
+  opacity: 0.92;
+}
+
+/* Error message */
+.error-message {
+  width: 100%;
+  margin: 6px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #9f1239;
+  font-size: 14px;
+}
+
+/* ===== List ===== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Todo item container
+   Səndə TodoItem-in root-u div-dir, onu card kimi stilləyirik */
+ul > li {
+  padding: 0;
+  margin: 0;
+}
+
+/* TodoItem root div */
+ul > li > div,
+ul > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+ul > li > div:hover,
+ul > div:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 10px 22px rgba(17, 24, 39, 0.06);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+/* Text */
+.todo-text {
+  flex: 1;
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.btns{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Delete button */
+.delete-btn {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+}
+
+.delete-btn:hover {
+  background: #fff1f2;
+  border-color: #fecdd3;
+}
+
+.delete-btn:active {
+  transform: translateY(1px);
+}
+
+.delete-btn svg {
+  font-size: 18px;
+}
+
+/* ===== Clear All ===== */
+.clear-all-btn {
+  margin-top: 14px;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #111827;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.05s ease, background 0.15s ease;
+}
+
+.clear-all-btn:hover {
+  opacity: 0.92;
+}
+
+.clear-all-btn:active {
+  transform: translateY(1px);
+}
+
+.clear-all-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #9ca3af;
+  border-color: #e5e7eb;
+}
+
+/* ===== Small screens ===== */
+@media (max-width: 520px) {
+  #todoForm {
+    flex-direction: column;
+    align-items: stretch;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  #todoForm button[type="submit"] {
+    width: 100%;
   }
 }
