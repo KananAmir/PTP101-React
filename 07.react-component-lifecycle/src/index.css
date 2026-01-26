@@ -77,3 +77,12 @@ table, tr, th, td {
 ul{
   list-style: none;
 }
+
+#categoryForm{
+  padding: 1rem;
+}
+input{
+  border: 1px solid;
+  margin-bottom: 1rem;
+  padding: 0.25rem;
+}

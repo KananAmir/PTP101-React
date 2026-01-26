@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { BASE_URL } from '../constant';
 
+//get all data
 const getCategories = async () => {
     try {
         const response = await axios(`${BASE_URL}/categories`)
@@ -9,6 +10,8 @@ const getCategories = async () => {
         console.log(error.message);
     }
 }
+
+//get data by id
 const getCategoryById = async (id) => {
     try {
         const response = await axios(`${BASE_URL}/categories/${id}`)
@@ -18,6 +21,8 @@ const getCategoryById = async (id) => {
     }
 }
 
+
+// delete data by id
 const deleteCategoryById = async (id) => {
     try {
         const response = await axios.delete(`${BASE_URL}/categories/${id}`)
@@ -29,6 +34,7 @@ const deleteCategoryById = async (id) => {
     }
 }
 
+// add new data
 const addNewCategory = async (payload) => {
     try {
         const response = await axios.post(`${BASE_URL}/categories`, payload)
@@ -38,6 +44,7 @@ const addNewCategory = async (payload) => {
     }
 }
 
+// edit data by id
 const editCategoryById = async (id, payload) => {
     try {
         const response = await axios.put(`${BASE_URL}/categories/${id}`, payload)

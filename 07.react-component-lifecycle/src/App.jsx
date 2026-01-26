@@ -10,7 +10,7 @@ function App() {
   const [show, setShow] = useState(false)
   return (
     <>
-      <h1 class="text-3xl font-bold underline text-red-700">
+      <h1 className="text-3xl font-bold underline text-red-700">
         Hello world!
       </h1>
       <button onClick={() => setShow(!show)}>
