@@ -24,6 +24,12 @@ function App() {
         <Route path='/books' element={<Books />} />
         <Route path='/books/detail/:id' element={<BookDetail />} />
         <Route path='/books/new' element={<AddBook />} />
+{/* 
+        <Route path='/books'>
+          <Route index element={<Books />} />
+          <Route path='detail/:id' element={<BookDetail />} />
+          <Route path='new' element={<AddBook />} />
+        </Route> */}
 
         <Route path='*' element={<NotFound />}/>
       </Routes>

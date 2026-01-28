@@ -36,19 +36,19 @@ const Header = () => {
         <nav>
             <ul>
                 <li>
-                   <NavLink className={({isActive})=> !isActive ? '!text-gray-400' : '!text-red-500'}  to={'/'}>Home</NavLink >
+                   <NavLink className={({isActive})=> !isActive ? 'text-gray-400!' : 'text-red-500!'}  to={'/'}>Home</NavLink >
                 </li>
                 <li>
-                   <NavLink className={({isActive})=> !isActive ? '!text-gray-400' : '!text-red-500'}  to={'/about'}>About</NavLink >
+                   <NavLink className={({isActive})=> !isActive ? 'text-gray-400!' : 'text-red-500!'}  to={'/about'}>About</NavLink >
                 </li>
                 <li>
-                   <NavLink className={({isActive})=> !isActive ? '!text-gray-400' : '!text-red-500'}  to={'/contact'}>Contact</NavLink >
+                   <NavLink className={({isActive})=> !isActive ? 'text-gray-400!' : 'text-red-500!'}  to={'/contact'}>Contact</NavLink >
                 </li>
                 <li>
-                   <NavLink className={({isActive})=> !isActive ? '!text-gray-400' : '!text-red-500'}  to={'/books'}>Books</NavLink >
+                   <NavLink className={({isActive})=> !isActive ? 'text-gray-400!' : 'text-red-500!'}  to={'/books'}>Books</NavLink >
                 </li>
                 <li>
-                   <NavLink className={({isActive})=> !isActive ? '!text-gray-400' : '!text-red-500'}  to={'/books/new'}>Add Book</NavLink >
+                   <NavLink className={({isActive})=> !isActive ? 'text-gray-400!' : 'text-red-500!'}  to={'/books/new'}>Add Book</NavLink >
                 </li>
             </ul>
         </nav>
