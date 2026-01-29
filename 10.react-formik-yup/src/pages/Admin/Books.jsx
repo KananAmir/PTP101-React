@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { BASE_URL, ENDPOINTS } from "../../constant"
 import Loading from "../../components/Loading"
 import { deleteBookById } from "../../services/bookService"
@@ -10,6 +10,7 @@ function Books() {
   const [books, setBooks] = useState([])
   const [loading, setLoading] = useState(true)
 
+  const searchTimeoutRef = useRef(null)
 
   const handleDelete = async (bookId) => {
     try {
@@ -29,6 +30,39 @@ function Books() {
 
     }
   }
+
+  // const handleSearch = async (e) => {
+  //   try {
+  //     const searchTerm = e.target.value;
+  //     const response = await axios(`${BASE_URL}/${ENDPOINTS.BOOKS}?q=${searchTerm}`)
+  //     // console.log(response.data);
+  //     setBooks(response.data)
+
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // }
+
+
+  const handleSearch = (e) => {
+    const searchTerm = e.target.value;
+
+    // əvvəlki timeout-u ləğv et
+    clearTimeout(searchTimeoutRef.current);
+
+    // yeni timeout qur
+    searchTimeoutRef.current = setTimeout(async () => {
+      try {
+        const response = await axios(
+          `${BASE_URL}/${ENDPOINTS.BOOKS}?q=${searchTerm}`
+        );
+        setBooks(response.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    }, 500); // 👈 debounce delay
+  };
+
 
   useEffect(() => {
     const getBooks = async () => {
@@ -54,6 +88,10 @@ function Books() {
       <h2 className="text-2xl font-semibold mb-6 text-gray-800">
         Admin Books Page
       </h2>
+
+      <div className="mb-8">
+        <input type="search" name="search" id="search" className="border border-amber-500 rounded px-4 py-2" onChange={handleSearch} />
+      </div>
 
       <div className="overflow-x-auto bg-white shadow rounded-lg">
         <table className="min-w-full border border-gray-200">
