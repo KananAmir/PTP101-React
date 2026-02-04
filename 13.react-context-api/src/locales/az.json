@@ -1,0 +1,46 @@
+{
+    "homePage": {
+        "bookStore": "Kitab Mağazası",
+        "welcomeMessage": "Xoş gəlmisiniz! Ən yaxşı kitabları kəşf edin."
+    },
+    "wishlist": {
+        "emptyMessage": "Sizin Arzu Siyahınız Boşdur",
+        "emptyDescription": "Kitab kolleksiyamıza baxın və sevdiyiniz kitabları arzu siyahısına əlavə edin."
+    },
+    "basket": {
+        "emptyMessage": "Sizin səbətiniz boşdur",
+        "emptyDescription": "Zəhmət olmasa, səbətinizə bəzi kitablar əlavə edin.",
+        "goToBooks": "Kitablara Get",
+        "title": "Səbət Səhifəsi"
+    },
+    "admin": {
+        "addBook": {
+            "pageTitle": "Admin Kitab Əlavə Et Səhifəsi",
+            "form": {
+                "title": {
+                    "placeholder": "başlıq"
+                },
+                "author": {
+                    "placeholder": "müəllif"
+                },
+                "price": {
+                    "placeholder": "qiymət"
+                },
+                "coverImageURL": {
+                    "placeholder": "coverImageURL"
+                },
+                "description": {
+                    "placeholder": "təsvir"
+                }
+            },
+            "buttons": {
+                "add": "Kitab əlavə et",
+                "adding": "Əlavə olunur..."
+            },
+            "toast": {
+                "success": "Kitab uğurla əlavə olundu!",
+                "error": "Xəta baş verdi. Yenidən yoxla."
+            }
+        }
+    }
+}

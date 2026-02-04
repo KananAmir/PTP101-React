@@ -15,6 +15,7 @@ import AddBook from './pages/Admin/AddBook'
 import EditBook from './pages/Admin/EditBook'
 import BookDetail from './pages/Client/BookDetail'
 import Wishlist from './pages/Client/Wishlist'
+import Basket from './pages/Client/Basket'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path='contact' element={<Contact />} />
           <Route path='wishlist' element={<Wishlist />} />
+          <Route path='basket' element={<Basket />} />
           {/* <Route path='books' element={<Books />} />
           <Route path='books/:id' element={<BookDetail />} /> */}
           <Route path='books'>

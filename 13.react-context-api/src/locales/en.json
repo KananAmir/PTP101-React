@@ -1,0 +1,46 @@
+{
+    "homePage": {
+        "bookStore": "Book Store",
+        "welcomeMessage": "Welcome! Discover the best books."
+    },
+    "wishlist": {
+        "emptyMessage": "Your Wishlist is Empty",
+        "emptyDescription": "Browse our book collection and add your favorite books to the wishlist."
+    },
+    "basket":{
+        "emptyMessage": "Your basket is empty",
+        "emptyDescription": "Please add some books to your basket.",
+        "goToBooks": "Go to Books",
+        "title": "Basket Page"
+    },
+     "admin": {
+    "addBook": {
+      "pageTitle": "Admin Add Book Page",
+      "form": {
+        "title": {
+          "placeholder": "title"
+        },
+        "author": {
+          "placeholder": "author"
+        },
+        "price": {
+          "placeholder": "price"
+        },
+        "coverImageURL": {
+          "placeholder": "coverImageURL"
+        },
+        "description": {
+          "placeholder": "description"
+        }
+      },
+      "buttons": {
+        "add": "Add Book",
+        "adding": "Adding..."
+      },
+      "toast": {
+        "success": "Book Added Successfully!",
+        "error": "Something went wrong. Please try again."
+      }
+    }
+  }
+}

@@ -5,13 +5,17 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import ThemeProvider from './context/ThemeProvider.jsx'
 import WishlistProvider from './context/WishlistProvider.jsx'
+import BasketProvider from './context/BasketProvider.jsx'
+import './i18n.js'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <ThemeProvider>
-      <WishlistProvider>
-        <App />
-      </WishlistProvider>
+      <BasketProvider>
+        <WishlistProvider>
+          <App />
+        </WishlistProvider>
+      </BasketProvider>
     </ThemeProvider>
   </BrowserRouter>
 )

@@ -1,13 +1,17 @@
 import { useContext } from "react"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { ThemeContext } from "../../context/ThemeContext"
 import { FaHeart } from "react-icons/fa";
 import { WishlistContext } from "../../context/WishlistContext";
+import { FaCartShopping } from "react-icons/fa6";
+import { BasketContext } from "../../context/BasketContext";
+import LanguageSwitcher from "../../components/LanguageSwitcher";
 
 const Header = () => {
 
   const { theme, toggleTheme } = useContext(ThemeContext)
   const { wishlist } = useContext(WishlistContext)
+  const { basket, totalBasketCount } = useContext(BasketContext)
 
   const linkClasses = ({ isActive }) =>
     isActive
@@ -31,15 +35,23 @@ const Header = () => {
       <NavLink to="/contact" className={linkClasses}>
         Contact
       </NavLink>
-      <NavLink to="/wishlist" className={linkClasses}>
-        <div className="flex !text-2xl">
+      <Link to="/wishlist">
+        <div className="flex text-2xl!">
           <FaHeart className="text-red-500 " />
           <sup>{wishlist.length}</sup>
         </div>
-      </NavLink>
-      <button onClick={toggleTheme} className="border border-2 px-3 my-1 rounded cursor-pointer">
+      </Link>
+      <Link to="/basket" >
+        <div className="flex text-2xl!">
+          <FaCartShopping />
+          {/* <sup>{basket.length}</sup> */}
+          <sup>{totalBasketCount}</sup>
+        </div>
+      </Link>
+      <button onClick={toggleTheme} className="border-2 px-3 my-1 rounded cursor-pointer">
         {theme === 'light' ? 'dark' : 'light'} mode
       </button>
+      <LanguageSwitcher/>
     </header>
   )
 }

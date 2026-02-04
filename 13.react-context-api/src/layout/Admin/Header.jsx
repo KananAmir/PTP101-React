@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import LanguageSwitcher from "../../components/LanguageSwitcher"
 
 const AdminHeader = () => {
   return (
@@ -12,6 +13,7 @@ const AdminHeader = () => {
       <Link to="/admin/books/new" className="mx-4 text-gray-600 hover:text-indigo-500 transition-colors">
         Add New Book
       </Link>
+      <LanguageSwitcher />
     </header>
   )
 }

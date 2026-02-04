@@ -3,9 +3,10 @@ import axios from "axios"
 import { Link } from "react-router-dom"
 import Loading from "../../components/Loading"
 import { BASE_URL, ENDPOINTS } from '../../constant'
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import { ThemeContext } from "../../context/ThemeContext"
 import { WishlistContext } from "../../context/WishlistContext"
+import { BasketContext } from "../../context/BasketContext"
 
 const Books = () => {
   const [books, setBooks] = useState([])
@@ -14,8 +15,10 @@ const Books = () => {
 
   const { theme } = useContext(ThemeContext)
   const { wishlist, toggleWishlist, isInWishlist } = useContext(WishlistContext)
+  const { addToBasket, basket, isInBasket, increaseQuantity } = useContext(BasketContext)
 
   console.log("wishlist", wishlist);
+  console.log("basket", basket);
 
   useEffect(() => {
     const getBooks = async () => {
@@ -66,12 +69,12 @@ const Books = () => {
                 className="h-56 w-full object-cover rounded-t-xl"
               />
 
-              <button onClick={()=>{
+              <button onClick={() => {
                 toggleWishlist(book)
               }}>
                 <FaHeart
-                className={`absolute top-3 right-3 text-2xl cursor-pointer transition ${isInWishlist(book) ? 'text-red-500 hover:text-red-700' : 'text-gray-300 hover:text-gray-500'}`}
-              /></button>
+                  className={`absolute top-3 right-3 text-2xl cursor-pointer transition ${isInWishlist(book) ? 'text-red-500 hover:text-red-700' : 'text-gray-300 hover:text-gray-500'}`}
+                /></button>
             </div>
 
 
@@ -97,10 +100,34 @@ const Books = () => {
                   ${book.price}
                 </span>
 
-                <span className="text-sm text-yellow-500 font-medium">
-                  ⭐ {book.rating}
-                </span>
+                <div className="flex items-center gap-3">
+                  <span className="text-sm text-yellow-500 font-medium">
+                    ⭐ {book.rating}
+                  </span>
+
+                  {/* ADD TO BASKET BUTTON */}
+                  <button
+                    className={`p-2 rounded-full transition cursor-pointer ${theme === "light"
+                      ? "bg-indigo-100 hover:bg-indigo-200"
+                      : "bg-indigo-600 hover:bg-indigo-700"
+                      }`}
+
+                    onClick={() => {
+                      if (isInBasket(book.id)) {
+                        increaseQuantity(book.id)
+                      }
+                      else {
+                        addToBasket(book)
+                      }
+                    }}
+                  >
+                    <FaShoppingCart
+                      className={`text-lg ${isInBasket(book.id) ? 'text-orange-600' : "text-indigo-600"}`}
+                    />
+                  </button>
+                </div>
               </div>
+
             </div>
           </div>
         ))}

@@ -3,17 +3,21 @@ import { WishlistContext } from "../../context/WishlistContext"
 import { ThemeContext } from "../../context/ThemeContext"
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Wishlist() {
     const { wishlist, toggleWishlist, isInWishlist, clearWishlist } = useContext(WishlistContext)
     const { theme } = useContext(ThemeContext)
 
+        const { t } = useTranslation();
+    
+    
 
     if (wishlist.length === 0) {
         return (
             <div className="container mx-auto px-4 py-8 text-center">
-                <h2 className="text-3xl font-bold mb-4">Your Wishlist is Empty</h2>
-                <p className="text-gray-600">Browse our book collection and add your favorite books to the wishlist.</p>
+                <h2 className="text-3xl font-bold mb-4">{t("wishlist.emptyMessage")}</h2>
+                <p className="text-gray-600">{t("wishlist.emptyDescription")}</p>
             </div>
         )
     }

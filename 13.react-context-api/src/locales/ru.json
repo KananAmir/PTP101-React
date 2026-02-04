@@ -1,0 +1,46 @@
+{
+    "homePage": {
+        "bookStore": "Книжный магазин",
+        "welcomeMessage": "Добро пожаловать! Откройте для себя лучшие книги."
+    },
+    "wishlist": {
+        "emptyMessage": "Ваш список желаний пуст",
+        "emptyDescription": "Просмотрите нашу коллекцию книг и добавьте свои любимые книги в список желаний."
+    },
+    "basket": {
+        "emptyMessage": "Ваша корзина пуста",
+        "emptyDescription": "Пожалуйста, добавьте несколько книг в вашу корзину.",
+        "goToBooks": "Перейти к книгам",
+        "title": "Страница корзины"
+    },
+    "admin": {
+        "addBook": {
+            "pageTitle": "Админ: Добавить книгу",
+            "form": {
+                "title": {
+                    "placeholder": "название"
+                },
+                "author": {
+                    "placeholder": "автор"
+                },
+                "price": {
+                    "placeholder": "цена"
+                },
+                "coverImageURL": {
+                    "placeholder": "ссылка на обложку (URL)"
+                },
+                "description": {
+                    "placeholder": "описание"
+                }
+            },
+            "buttons": {
+                "add": "Добавить книгу",
+                "adding": "Добавление..."
+            },
+            "toast": {
+                "success": "Книга успешно добавлена!",
+                "error": "Произошла ошибка. Попробуйте ещё раз."
+            }
+        }
+    }
+}
